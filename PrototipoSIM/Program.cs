@@ -17,7 +17,7 @@ namespace PrototipoSIM
             IRandomGenerator generator = new LinearCongruentialGenerator(0.0000, 1.0000, 30);
             IHypothesisTestMethod testMethod = new ChiSquareMethod();
 
-            var a = generator.Generate(6, 13, 7, 8);
+            var a = generator.Generate(6, 13, 7, 32);
 
             var result = testMethod.Test(a, 5, 0);
 

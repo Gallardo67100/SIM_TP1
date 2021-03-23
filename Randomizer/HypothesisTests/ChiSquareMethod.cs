@@ -15,8 +15,7 @@ namespace Randomizer.HypothesisTests
             var C = 0.0; // Acumulador para obtener el resultado de Chi-Cuadrado
             var sampleSize = sample.Count(); // Guardamos el tamaño de la muestra para utilizarlo en el calculo de las frecuencias
             var libertyGrade = numberOfIntervals - 1;
-            // TODO: Calcular el critical value dependiendo de el grado de libertad.
-            var criticalValue = 9.49;
+            var criticalValue = CriticalValues.GetCriticalValue(libertyGrade, 0.995);
 
             foreach(var interval in intervals.Values)
             {
