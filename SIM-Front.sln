@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIM-Front", "SIM-Front\SIM-Front.csproj", "{83EFE28A-0E18-49FD-BFA1-FD041EEB4731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomizer", "Randomizer\Randomizer.csproj", "{3F49B609-4B76-472D-95E8-186032AC54FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83EFE28A-0E18-49FD-BFA1-FD041EEB4731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EFE28A-0E18-49FD-BFA1-FD041EEB4731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EFE28A-0E18-49FD-BFA1-FD041EEB4731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EFE28A-0E18-49FD-BFA1-FD041EEB4731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F49B609-4B76-472D-95E8-186032AC54FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F49B609-4B76-472D-95E8-186032AC54FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F49B609-4B76-472D-95E8-186032AC54FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F49B609-4B76-472D-95E8-186032AC54FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E63D048-44BB-4DAE-91AB-1B2A1B679220}
+	EndGlobalSection
+EndGlobal
