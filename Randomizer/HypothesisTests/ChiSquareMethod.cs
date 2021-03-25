@@ -8,14 +8,14 @@ namespace Randomizer.HypothesisTests
 {
     public class ChiSquareMethod : IHypothesisTestMethod
     {
-        public bool Test(IEnumerable<double> sample, int numberOfIntervals, int empiricData)
+        public bool Test(IEnumerable<double> sample, int numberOfIntervals, int empiricData, double significanceValue)
         {
             var intervals = IntervalHandler.DefineIntervals(sample, numberOfIntervals);
 
             var C = 0.0; // Acumulador para obtener el resultado de Chi-Cuadrado
             var sampleSize = sample.Count(); // Guardamos el tamaño de la muestra para utilizarlo en el calculo de las frecuencias
             var libertyGrade = numberOfIntervals - 1;
-            var criticalValue = CriticalValues.GetCriticalValue(libertyGrade, 0.995);
+            var criticalValue = CriticalValues.GetCriticalValue(libertyGrade, significanceValue);
 
             foreach(var interval in intervals.Values)
             {

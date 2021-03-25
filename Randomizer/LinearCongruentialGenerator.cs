@@ -38,7 +38,7 @@ namespace Randomizer
             {
                 // Generamos un número de la serie, multiplicando la constante multiplicativa y Xi-1, 
                 // sumando la constante aditiva, y calculamos el módulo de la división por el módulo.
-                double randomNumber = (multiplier.Value * lastValue + aditive.Value) % modulus.Value;
+                double randomNumber = ((double)multiplier.Value * lastValue + aditive.Value) % modulus.Value;
 
                 // Guardamos el valor generado
                 lastValue = randomNumber;

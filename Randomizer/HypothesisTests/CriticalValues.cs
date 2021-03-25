@@ -30,6 +30,28 @@ namespace Randomizer.HypothesisTests
             return result;
         }
 
+        public static IEnumerable<double> GetSignificantValues()
+        {
+            var significantValue = new List<double>();
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            string path = ConfigurationManager.AppSettings.Get("ExcelPath");
+            FileInfo fileInfo = new FileInfo(path);
+
+            ExcelPackage package = new ExcelPackage(fileInfo);
+            ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault();
+
+            int columns = worksheet.Dimension.Columns;
+
+            for (int i = 2; i < columns; i++)
+            {
+                significantValue.Add(Convert.ToDouble(worksheet.Cells[1, i].Value.ToString()));
+            }
+
+            return significantValue;
+        }
+
         private static void InitChiSquareCriticalValues()
         {
             ChiSquareCriticalValues = new Dictionary<int, Dictionary<double, double>>();

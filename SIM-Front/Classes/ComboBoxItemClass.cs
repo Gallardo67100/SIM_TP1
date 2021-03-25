@@ -6,12 +6,12 @@ namespace WinformsApp.Classes
 {
     public class ComboBoxItemClass
     {
-        public ComboBoxItemClass(int value, string text)
+        public ComboBoxItemClass(double value, string text)
         {
             this.Value = value;
             this.Text = text;
         }
-        public int Value { get; set; }
+        public double Value { get; set; }
         public string Text { get; set; }
     }
 }

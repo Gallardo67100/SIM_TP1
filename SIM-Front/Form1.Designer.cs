@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement2 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
-            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect2 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
-            Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance histogramChartAppearance2 = new Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance();
+            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement8 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
+            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect8 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
+            Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance histogramChartAppearance8 = new Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance();
             this.btn_generarNumeros = new System.Windows.Forms.Button();
             this.grp_parametros = new System.Windows.Forms.GroupBox();
+            this.cmb_significantValue = new System.Windows.Forms.ComboBox();
+            this.lbl_significantValue = new System.Windows.Forms.Label();
             this.txt_modulus = new System.Windows.Forms.TextBox();
             this.txt_aditive = new System.Windows.Forms.TextBox();
             this.txt_multiplicative = new System.Windows.Forms.TextBox();
@@ -49,31 +51,36 @@
             this.lbl_method = new System.Windows.Forms.Label();
             this.lbl_sample = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RandomValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IntervalsGrid = new System.Windows.Forms.DataGridView();
-            this.FullSampleGrid = new System.Windows.Forms.DataGridView();
-            this.ultraChart1 = new Infragistics.Win.UltraWinChart.UltraChart();
-            this.lbl_histogram = new System.Windows.Forms.Label();
             this.Interval = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpectedFrecuency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ObservedFrecuency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccumResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullSampleGrid = new System.Windows.Forms.DataGridView();
+            this.ultraChart1 = new Infragistics.Win.UltraWinChart.UltraChart();
+            this.lbl_histogram = new System.Windows.Forms.Label();
             this.btn_validate = new System.Windows.Forms.Button();
+            this.lbl_success = new System.Windows.Forms.Label();
+            this.lbl_fail = new System.Windows.Forms.Label();
+            this.grp_data = new System.Windows.Forms.GroupBox();
+            this.RandomValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_parametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FullSampleGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraChart1)).BeginInit();
+            this.grp_data.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_generarNumeros
             // 
+            this.btn_generarNumeros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_generarNumeros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_generarNumeros.Location = new System.Drawing.Point(1079, 133);
+            this.btn_generarNumeros.Location = new System.Drawing.Point(1118, 133);
             this.btn_generarNumeros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_generarNumeros.Name = "btn_generarNumeros";
-            this.btn_generarNumeros.Size = new System.Drawing.Size(189, 41);
+            this.btn_generarNumeros.Size = new System.Drawing.Size(164, 41);
             this.btn_generarNumeros.TabIndex = 1;
             this.btn_generarNumeros.Text = "Generar números";
             this.btn_generarNumeros.UseVisualStyleBackColor = true;
@@ -81,6 +88,10 @@
             // 
             // grp_parametros
             // 
+            this.grp_parametros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_parametros.Controls.Add(this.cmb_significantValue);
+            this.grp_parametros.Controls.Add(this.lbl_significantValue);
             this.grp_parametros.Controls.Add(this.txt_modulus);
             this.grp_parametros.Controls.Add(this.txt_aditive);
             this.grp_parametros.Controls.Add(this.txt_multiplicative);
@@ -100,15 +111,35 @@
             this.grp_parametros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grp_parametros.Name = "grp_parametros";
             this.grp_parametros.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grp_parametros.Size = new System.Drawing.Size(1296, 201);
+            this.grp_parametros.Size = new System.Drawing.Size(1289, 193);
             this.grp_parametros.TabIndex = 2;
             this.grp_parametros.TabStop = false;
             this.grp_parametros.Text = "Parámetros";
             // 
+            // cmb_significantValue
+            // 
+            this.cmb_significantValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_significantValue.FormattingEnabled = true;
+            this.cmb_significantValue.Location = new System.Drawing.Point(219, 83);
+            this.cmb_significantValue.Name = "cmb_significantValue";
+            this.cmb_significantValue.Size = new System.Drawing.Size(165, 28);
+            this.cmb_significantValue.TabIndex = 15;
+            // 
+            // lbl_significantValue
+            // 
+            this.lbl_significantValue.AutoSize = true;
+            this.lbl_significantValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_significantValue.Location = new System.Drawing.Point(20, 86);
+            this.lbl_significantValue.Name = "lbl_significantValue";
+            this.lbl_significantValue.Size = new System.Drawing.Size(171, 20);
+            this.lbl_significantValue.TabIndex = 14;
+            this.lbl_significantValue.Text = "Valor de Significancia";
+            // 
             // txt_modulus
             // 
+            this.txt_modulus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_modulus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_modulus.Location = new System.Drawing.Point(929, 140);
+            this.txt_modulus.Location = new System.Drawing.Point(982, 140);
             this.txt_modulus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_modulus.Name = "txt_modulus";
             this.txt_modulus.Size = new System.Drawing.Size(92, 26);
@@ -116,8 +147,9 @@
             // 
             // txt_aditive
             // 
+            this.txt_aditive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_aditive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_aditive.Location = new System.Drawing.Point(929, 83);
+            this.txt_aditive.Location = new System.Drawing.Point(982, 83);
             this.txt_aditive.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_aditive.Name = "txt_aditive";
             this.txt_aditive.Size = new System.Drawing.Size(92, 26);
@@ -125,8 +157,9 @@
             // 
             // txt_multiplicative
             // 
+            this.txt_multiplicative.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_multiplicative.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_multiplicative.Location = new System.Drawing.Point(929, 31);
+            this.txt_multiplicative.Location = new System.Drawing.Point(982, 31);
             this.txt_multiplicative.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_multiplicative.Name = "txt_multiplicative";
             this.txt_multiplicative.Size = new System.Drawing.Size(92, 26);
@@ -134,8 +167,9 @@
             // 
             // txt_intervals
             // 
+            this.txt_intervals.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_intervals.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_intervals.Location = new System.Drawing.Point(552, 140);
+            this.txt_intervals.Location = new System.Drawing.Point(608, 140);
             this.txt_intervals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_intervals.Name = "txt_intervals";
             this.txt_intervals.Size = new System.Drawing.Size(90, 26);
@@ -143,8 +177,9 @@
             // 
             // txt_sampleSize
             // 
+            this.txt_sampleSize.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_sampleSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sampleSize.Location = new System.Drawing.Point(551, 83);
+            this.txt_sampleSize.Location = new System.Drawing.Point(607, 83);
             this.txt_sampleSize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_sampleSize.Name = "txt_sampleSize";
             this.txt_sampleSize.Size = new System.Drawing.Size(91, 26);
@@ -152,8 +187,9 @@
             // 
             // txt_seedValue
             // 
+            this.txt_seedValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_seedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_seedValue.Location = new System.Drawing.Point(550, 31);
+            this.txt_seedValue.Location = new System.Drawing.Point(606, 31);
             this.txt_seedValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_seedValue.Name = "txt_seedValue";
             this.txt_seedValue.Size = new System.Drawing.Size(92, 26);
@@ -161,9 +197,10 @@
             // 
             // lbl_modulus
             // 
+            this.lbl_modulus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_modulus.AutoSize = true;
             this.lbl_modulus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_modulus.Location = new System.Drawing.Point(831, 143);
+            this.lbl_modulus.Location = new System.Drawing.Point(884, 143);
             this.lbl_modulus.Name = "lbl_modulus";
             this.lbl_modulus.Size = new System.Drawing.Size(63, 20);
             this.lbl_modulus.TabIndex = 7;
@@ -171,9 +208,10 @@
             // 
             // lbl_aditive
             // 
+            this.lbl_aditive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_aditive.AutoSize = true;
             this.lbl_aditive.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aditive.Location = new System.Drawing.Point(756, 86);
+            this.lbl_aditive.Location = new System.Drawing.Point(809, 86);
             this.lbl_aditive.Name = "lbl_aditive";
             this.lbl_aditive.Size = new System.Drawing.Size(138, 20);
             this.lbl_aditive.TabIndex = 6;
@@ -181,9 +219,10 @@
             // 
             // lbl_multiplicative
             // 
+            this.lbl_multiplicative.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_multiplicative.AutoSize = true;
             this.lbl_multiplicative.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_multiplicative.Location = new System.Drawing.Point(707, 34);
+            this.lbl_multiplicative.Location = new System.Drawing.Point(760, 34);
             this.lbl_multiplicative.Name = "lbl_multiplicative";
             this.lbl_multiplicative.Size = new System.Drawing.Size(187, 20);
             this.lbl_multiplicative.TabIndex = 5;
@@ -191,9 +230,10 @@
             // 
             // lbl_intervals
             // 
+            this.lbl_intervals.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_intervals.AutoSize = true;
             this.lbl_intervals.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_intervals.Location = new System.Drawing.Point(342, 143);
+            this.lbl_intervals.Location = new System.Drawing.Point(398, 143);
             this.lbl_intervals.Name = "lbl_intervals";
             this.lbl_intervals.Size = new System.Drawing.Size(175, 20);
             this.lbl_intervals.TabIndex = 4;
@@ -201,9 +241,10 @@
             // 
             // lbl_sampleSize
             // 
+            this.lbl_sampleSize.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_sampleSize.AutoSize = true;
             this.lbl_sampleSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sampleSize.Location = new System.Drawing.Point(382, 86);
+            this.lbl_sampleSize.Location = new System.Drawing.Point(438, 86);
             this.lbl_sampleSize.Name = "lbl_sampleSize";
             this.lbl_sampleSize.Size = new System.Drawing.Size(135, 20);
             this.lbl_sampleSize.TabIndex = 3;
@@ -211,9 +252,10 @@
             // 
             // lbl_seedValue
             // 
+            this.lbl_seedValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_seedValue.AutoSize = true;
             this.lbl_seedValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_seedValue.Location = new System.Drawing.Point(409, 34);
+            this.lbl_seedValue.Location = new System.Drawing.Point(465, 34);
             this.lbl_seedValue.Name = "lbl_seedValue";
             this.lbl_seedValue.Size = new System.Drawing.Size(108, 20);
             this.lbl_seedValue.TabIndex = 2;
@@ -226,8 +268,9 @@
             this.cmb_metodos.Location = new System.Drawing.Point(112, 31);
             this.cmb_metodos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_metodos.Name = "cmb_metodos";
-            this.cmb_metodos.Size = new System.Drawing.Size(233, 28);
+            this.cmb_metodos.Size = new System.Drawing.Size(272, 28);
             this.cmb_metodos.TabIndex = 1;
+            this.cmb_metodos.SelectedIndexChanged += new System.EventHandler(this.cmb_metodos_SelectedIndexChanged);
             // 
             // lbl_method
             // 
@@ -243,7 +286,7 @@
             // 
             this.lbl_sample.AutoSize = true;
             this.lbl_sample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sample.Location = new System.Drawing.Point(38, 249);
+            this.lbl_sample.Location = new System.Drawing.Point(19, 27);
             this.lbl_sample.Name = "lbl_sample";
             this.lbl_sample.Size = new System.Drawing.Size(171, 25);
             this.lbl_sample.TabIndex = 3;
@@ -259,17 +302,10 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.Text = "dataGridView1";
             // 
-            // RandomValue
-            // 
-            this.RandomValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.RandomValue.HeaderText = "Valor Generado";
-            this.RandomValue.MinimumWidth = 6;
-            this.RandomValue.Name = "RandomValue";
-            this.RandomValue.ReadOnly = true;
-            this.RandomValue.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // IntervalsGrid
             // 
+            this.IntervalsGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.IntervalsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.IntervalsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Interval,
@@ -277,24 +313,74 @@
             this.ObservedFrecuency,
             this.Result,
             this.AccumResult});
-            this.IntervalsGrid.Location = new System.Drawing.Point(253, 292);
+            this.IntervalsGrid.Location = new System.Drawing.Point(239, 61);
             this.IntervalsGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IntervalsGrid.Name = "IntervalsGrid";
             this.IntervalsGrid.RowHeadersWidth = 51;
-            this.IntervalsGrid.Size = new System.Drawing.Size(505, 354);
+            this.IntervalsGrid.Size = new System.Drawing.Size(512, 354);
             this.IntervalsGrid.TabIndex = 4;
             this.IntervalsGrid.Text = "dataGridView1";
             // 
+            // Interval
+            // 
+            this.Interval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Interval.HeaderText = "Intervalo";
+            this.Interval.MinimumWidth = 6;
+            this.Interval.Name = "Interval";
+            this.Interval.ReadOnly = true;
+            this.Interval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ExpectedFrecuency
+            // 
+            this.ExpectedFrecuency.HeaderText = "fe";
+            this.ExpectedFrecuency.MinimumWidth = 25;
+            this.ExpectedFrecuency.Name = "ExpectedFrecuency";
+            this.ExpectedFrecuency.ReadOnly = true;
+            this.ExpectedFrecuency.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ExpectedFrecuency.Width = 40;
+            // 
+            // ObservedFrecuency
+            // 
+            this.ObservedFrecuency.HeaderText = "fo";
+            this.ObservedFrecuency.MinimumWidth = 25;
+            this.ObservedFrecuency.Name = "ObservedFrecuency";
+            this.ObservedFrecuency.ReadOnly = true;
+            this.ObservedFrecuency.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ObservedFrecuency.Width = 40;
+            // 
+            // Result
+            // 
+            this.Result.HeaderText = "C";
+            this.Result.MinimumWidth = 50;
+            this.Result.Name = "Result";
+            this.Result.ReadOnly = true;
+            this.Result.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Result.Width = 75;
+            // 
+            // AccumResult
+            // 
+            this.AccumResult.HeaderText = "C(AC)";
+            this.AccumResult.MinimumWidth = 50;
+            this.AccumResult.Name = "AccumResult";
+            this.AccumResult.ReadOnly = true;
+            this.AccumResult.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AccumResult.Width = 75;
+            // 
             // FullSampleGrid
             // 
+            this.FullSampleGrid.AllowUserToAddRows = false;
+            this.FullSampleGrid.AllowUserToDeleteRows = false;
+            this.FullSampleGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.FullSampleGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FullSampleGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RandomValue});
-            this.FullSampleGrid.Location = new System.Drawing.Point(23, 291);
+            this.FullSampleGrid.Location = new System.Drawing.Point(6, 61);
             this.FullSampleGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FullSampleGrid.Name = "FullSampleGrid";
+            this.FullSampleGrid.ReadOnly = true;
             this.FullSampleGrid.RowHeadersWidth = 51;
-            this.FullSampleGrid.Size = new System.Drawing.Size(202, 354);
+            this.FullSampleGrid.Size = new System.Drawing.Size(209, 354);
             this.FullSampleGrid.TabIndex = 0;
             this.FullSampleGrid.Text = "dataGridView1";
             // 
@@ -305,10 +391,13 @@
             // 
             // ultraChart1
             // 
+            this.ultraChart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraChart1.Axis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            paintElement2.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
-            paintElement2.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            this.ultraChart1.Axis.PE = paintElement2;
+            paintElement8.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
+            paintElement8.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
+            this.ultraChart1.Axis.PE = paintElement8;
             this.ultraChart1.Axis.X.Labels.Font = new System.Drawing.Font("Verdana", 7F);
             this.ultraChart1.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray;
             this.ultraChart1.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near;
@@ -481,79 +570,35 @@
             this.ultraChart1.Data.MaxValue = 1D;
             this.ultraChart1.Data.MinValue = 0D;
             this.ultraChart1.Data.RowLabelsColumn = 0;
-            this.ultraChart1.Effects.Effects.Add(gradientEffect2);
-            histogramChartAppearance2.ColumnAppearance.ColumnSpacing = 0D;
-            histogramChartAppearance2.ColumnAppearance.StringAxis = false;
-            histogramChartAppearance2.LineAppearance.PE.Fill = System.Drawing.Color.Red;
-            histogramChartAppearance2.LineAppearance.Visible = false;
-            this.ultraChart1.HistogramChart = histogramChartAppearance2;
-            this.ultraChart1.Location = new System.Drawing.Point(793, 293);
+            this.ultraChart1.Effects.Effects.Add(gradientEffect8);
+            histogramChartAppearance8.ColumnAppearance.ColumnSpacing = 0D;
+            histogramChartAppearance8.ColumnAppearance.StringAxis = false;
+            histogramChartAppearance8.LineAppearance.PE.Fill = System.Drawing.Color.Red;
+            histogramChartAppearance8.LineAppearance.Visible = false;
+            this.ultraChart1.HistogramChart = histogramChartAppearance8;
+            this.ultraChart1.Location = new System.Drawing.Point(757, 61);
             this.ultraChart1.Name = "ultraChart1";
-            this.ultraChart1.Size = new System.Drawing.Size(519, 352);
+            this.ultraChart1.Size = new System.Drawing.Size(526, 354);
             this.ultraChart1.TabIndex = 5;
             this.ultraChart1.Tooltips.HighlightFillColor = System.Drawing.Color.DimGray;
             this.ultraChart1.Tooltips.HighlightOutlineColor = System.Drawing.Color.DarkGray;
-            this.ultraChart1.Tooltips.TooltipControl = null;
             this.ultraChart1.Visible = false;
             // 
             // lbl_histogram
             // 
+            this.lbl_histogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_histogram.AutoSize = true;
             this.lbl_histogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_histogram.Location = new System.Drawing.Point(995, 249);
+            this.lbl_histogram.Location = new System.Drawing.Point(977, 27);
             this.lbl_histogram.Name = "lbl_histogram";
             this.lbl_histogram.Size = new System.Drawing.Size(111, 25);
             this.lbl_histogram.TabIndex = 6;
             this.lbl_histogram.Text = "Histograma";
             this.lbl_histogram.Visible = false;
             // 
-            // Interval
-            // 
-            this.Interval.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Interval.HeaderText = "Intervalo";
-            this.Interval.MinimumWidth = 6;
-            this.Interval.Name = "Interval";
-            this.Interval.ReadOnly = true;
-            this.Interval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ExpectedFrecuency
-            // 
-            this.ExpectedFrecuency.HeaderText = "fe";
-            this.ExpectedFrecuency.MinimumWidth = 25;
-            this.ExpectedFrecuency.Name = "ExpectedFrecuency";
-            this.ExpectedFrecuency.ReadOnly = true;
-            this.ExpectedFrecuency.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ExpectedFrecuency.Width = 40;
-            // 
-            // ObservedFrecuency
-            // 
-            this.ObservedFrecuency.HeaderText = "fo";
-            this.ObservedFrecuency.MinimumWidth = 25;
-            this.ObservedFrecuency.Name = "ObservedFrecuency";
-            this.ObservedFrecuency.ReadOnly = true;
-            this.ObservedFrecuency.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ObservedFrecuency.Width = 40;
-            // 
-            // Result
-            // 
-            this.Result.HeaderText = "C";
-            this.Result.MinimumWidth = 50;
-            this.Result.Name = "Result";
-            this.Result.ReadOnly = true;
-            this.Result.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Result.Width = 75;
-            // 
-            // AccumResult
-            // 
-            this.AccumResult.HeaderText = "C(AC)";
-            this.AccumResult.MinimumWidth = 50;
-            this.AccumResult.Name = "AccumResult";
-            this.AccumResult.ReadOnly = true;
-            this.AccumResult.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AccumResult.Width = 75;
-            // 
             // btn_validate
             // 
+            this.btn_validate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_validate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_validate.Location = new System.Drawing.Point(1094, 676);
             this.btn_validate.Name = "btn_validate";
@@ -562,19 +607,67 @@
             this.btn_validate.Text = "Validar Hipotesis";
             this.btn_validate.UseVisualStyleBackColor = true;
             this.btn_validate.Visible = false;
+            this.btn_validate.Click += new System.EventHandler(this.btn_validate_Click);
+            // 
+            // lbl_success
+            // 
+            this.lbl_success.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_success.AutoSize = true;
+            this.lbl_success.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_success.ForeColor = System.Drawing.Color.OliveDrab;
+            this.lbl_success.Location = new System.Drawing.Point(18, 684);
+            this.lbl_success.Name = "lbl_success";
+            this.lbl_success.Size = new System.Drawing.Size(182, 29);
+            this.lbl_success.TabIndex = 8;
+            this.lbl_success.Text = "Mensaje exito";
+            this.lbl_success.Visible = false;
+            // 
+            // lbl_fail
+            // 
+            this.lbl_fail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_fail.AutoSize = true;
+            this.lbl_fail.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fail.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbl_fail.Location = new System.Drawing.Point(18, 684);
+            this.lbl_fail.Name = "lbl_fail";
+            this.lbl_fail.Size = new System.Drawing.Size(176, 29);
+            this.lbl_fail.TabIndex = 9;
+            this.lbl_fail.Text = "Mensaje fallo";
+            this.lbl_fail.Visible = false;
+            // 
+            // grp_data
+            // 
+            this.grp_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_data.Controls.Add(this.lbl_sample);
+            this.grp_data.Controls.Add(this.lbl_histogram);
+            this.grp_data.Controls.Add(this.FullSampleGrid);
+            this.grp_data.Controls.Add(this.ultraChart1);
+            this.grp_data.Controls.Add(this.IntervalsGrid);
+            this.grp_data.Location = new System.Drawing.Point(23, 222);
+            this.grp_data.Name = "grp_data";
+            this.grp_data.Size = new System.Drawing.Size(1289, 448);
+            this.grp_data.TabIndex = 10;
+            this.grp_data.TabStop = false;
+            // 
+            // RandomValue
+            // 
+            this.RandomValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RandomValue.HeaderText = "Valor Generado";
+            this.RandomValue.MinimumWidth = 6;
+            this.RandomValue.Name = "RandomValue";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1337, 751);
+            this.Controls.Add(this.lbl_success);
             this.Controls.Add(this.btn_validate);
-            this.Controls.Add(this.lbl_histogram);
-            this.Controls.Add(this.ultraChart1);
-            this.Controls.Add(this.IntervalsGrid);
-            this.Controls.Add(this.lbl_sample);
             this.Controls.Add(this.grp_parametros);
-            this.Controls.Add(this.FullSampleGrid);
+            this.Controls.Add(this.grp_data);
+            this.Controls.Add(this.lbl_fail);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Muestra generada";
@@ -585,6 +678,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FullSampleGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraChart1)).EndInit();
+            this.grp_data.ResumeLayout(false);
+            this.grp_data.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,7 +706,6 @@
         private System.Windows.Forms.Label lbl_seedValue;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView IntervalsGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RandomValue;
         private Infragistics.Win.UltraWinChart.UltraChart ultraChart1;
         private System.Windows.Forms.Label lbl_histogram;
         private System.Windows.Forms.DataGridViewTextBoxColumn Interval;
@@ -620,6 +714,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Result;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccumResult;
         private System.Windows.Forms.Button btn_validate;
+        private System.Windows.Forms.ComboBox cmb_significantValue;
+        private System.Windows.Forms.Label lbl_significantValue;
+        private System.Windows.Forms.Label lbl_success;
+        private System.Windows.Forms.Label lbl_fail;
+        private System.Windows.Forms.GroupBox grp_data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RandomValue;
     }
 }
 

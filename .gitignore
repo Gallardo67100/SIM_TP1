@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Randomizer/obj/Debug/netcoreapp3.1
+/.vs/SIM-Front/DesignTimeBuild
+/packages/EPPlus.5.0.3/lib
+/packages/EPPlus.5.0.3
+/packages/Microsoft.IO.RecyclableMemoryStream.1.4.1
+/packages
+/SIM-Front/Properties/DataSources
