@@ -3,9 +3,14 @@
 ################################################################################
 
 /Randomizer/obj/Debug/netcoreapp3.1
+/Randomizer/obj/Debug/netstandard2.0
+/Randomizer/bin/Debug/netstandard2.0
 /.vs/SIM-Front/DesignTimeBuild
+/.vs/SIM-Front/v16
 /packages/EPPlus.5.0.3/lib
 /packages/EPPlus.5.0.3
 /packages/Microsoft.IO.RecyclableMemoryStream.1.4.1
 /packages
 /SIM-Front/Properties/DataSources
+/SIM-Front/bin/debug
+/SIM-Front/obj/debug
