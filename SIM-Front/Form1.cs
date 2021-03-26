@@ -1,4 +1,5 @@
 ﻿using Randomizer;
+using Randomizer.Classes;
 using Randomizer.Helpers;
 using Randomizer.HypothesisTests;
 using System;
@@ -16,13 +17,45 @@ namespace SIM_Front
 {
     public partial class Form1 : Form
     {
-        private List<double> fullSample { get; set; } = new List<double>();
+        private List<RandomGridValue> fullGridSample { get; set; } = new List<RandomGridValue>();
+        private List<double> fullUnformatedSample { get; set; } = new List<double>();
+
         private Dictionary<string, IEnumerable<double>> intervals { get; set; } = new Dictionary<string, IEnumerable<double>>();
         private double accResult { get; set; } = 0.0;
 
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Cargamos los posibles metodos generadores de números
+            var comboMetodosSource = new List<ComboBoxItemClass>()
+            {
+                new ComboBoxItemClass(0, "Método Congruencial Lineal"),
+                new ComboBoxItemClass(1, "Método Congruencial Multiplicativo"),
+                new ComboBoxItemClass(2, "Método Nativo .Net")
+            };
+
+            cmb_metodos.ValueMember = "Value";
+            cmb_metodos.DisplayMember = "Text";
+            cmb_metodos.DataSource = comboMetodosSource;
+
+            //Bloqueo los campos que no apliquen
+            int selectedMethod = Int32.Parse(cmb_metodos.SelectedValue.ToString());
+            EnableParameterFields(selectedMethod);
+
+            //Cargamos los posibles grados de significancia
+            var comboGradosSignificanciaSource = new List<ComboBoxItemClass>();
+            foreach (var item in CriticalValues.GetSignificantValues())
+            {
+                comboGradosSignificanciaSource.Add(new ComboBoxItemClass(item, item.ToString()));
+            }
+
+            cmb_significantValue.ValueMember = "Value";
+            cmb_significantValue.DisplayMember = "Text";
+            cmb_significantValue.DataSource = comboGradosSignificanciaSource;
         }
 
         private void btn_generarNumeros_Click(object sender, EventArgs e)
@@ -86,31 +119,30 @@ namespace SIM_Front
                     break;
             }
 
-            this.fullSample = generator.Generate(seed, multiplicative, aditive, modulus).ToList();
+            //TODO: Mejorar la carga de la grilla.
+            this.fullGridSample = generator.Generate(seed, multiplicative, aditive, modulus).ToList();
+            this.fullUnformatedSample = generator.GenerateUnformated(seed, multiplicative, aditive, modulus).ToList();
 
             //TODO: Arreglar el metodo que limpia grillas
-            ClearDGV(this.FullSampleGrid);
+            //ClearDGV(this.FullSampleGrid);
             //Cargamos la grilla de números psuedo aleatorios
-            foreach (var item in this.fullSample)
-            {
-                this.FullSampleGrid.Rows.Add(item.ToString("0.0000"));
-            }
+            this.FullSampleGrid.DataSource = this.fullGridSample;
         }
 
         private void LoadIntervalGrid(int numberOfIntervals){
-            this.intervals = IntervalHandler.DefineIntervals(this.fullSample, numberOfIntervals);
+            this.intervals = IntervalHandler.DefineIntervals(this.fullUnformatedSample, numberOfIntervals);
             this.accResult = 0.0;
 
             //TODO: Arreglar el metodo que limpia grillas
-            ClearDGV(this.IntervalsGrid);
+            //ClearDGV(this.IntervalsGrid);
 
             //Cargamos la grilla de intervalos, calculando los valores para cada fila y el acumulado
             foreach (var item in this.intervals)
             {
-                var expectedFrecuency = this.fullSample.Count / numberOfIntervals;
+                var expectedFrecuency = this.fullUnformatedSample.Count / numberOfIntervals;
                 var observedFrecuency = item.Value.Count();
 
-                var individualResult = (Math.Pow((expectedFrecuency - observedFrecuency), 2) / expectedFrecuency); ;
+                var individualResult = (Math.Pow((expectedFrecuency - observedFrecuency), 2) / expectedFrecuency);
                 accResult += individualResult;
 
                 this.IntervalsGrid.Rows.Add(item.Key, expectedFrecuency, observedFrecuency, individualResult, accResult);
@@ -123,42 +155,11 @@ namespace SIM_Front
         {
             //Mostramos el histograma y todo lo relacionado
             this.ultraChart1.Axis.X.TickmarkInterval = (double)1/numberOfIntervals;
-            this.ultraChart1.Data.DataSource = this.fullSample.ToArray();
+            this.ultraChart1.Data.DataSource = this.fullUnformatedSample;
             this.ultraChart1.Data.DataBind();
             this.ultraChart1.Show();
             this.lbl_histogram.Show();
             this.btn_validate.Show();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //Cargamos los posibles metodos generadores de números
-            var comboMetodosSource = new List<ComboBoxItemClass>()
-            {
-                new ComboBoxItemClass(0, "Método Congruencial Lineal"),
-                new ComboBoxItemClass(1, "Método Congruencial Multiplicativo"),
-                new ComboBoxItemClass(2, "Método Nativo .Net")
-            };
-
-            cmb_metodos.ValueMember = "Value";
-            cmb_metodos.DisplayMember = "Text";
-            cmb_metodos.DataSource = comboMetodosSource;
-
-            //Bloqueo los campos que no apliquen
-            int selectedMethod = Int32.Parse(cmb_metodos.SelectedValue.ToString());
-            EnableParameterFields(selectedMethod);
-
-            //Cargamos los posibles grados de significancia
-            var comboGradosSignificanciaSource = new List<ComboBoxItemClass>();
-            foreach (var item in CriticalValues.GetSignificantValues())
-            {
-                comboGradosSignificanciaSource.Add(new ComboBoxItemClass(item, item.ToString()));
-            }
-
-            cmb_significantValue.ValueMember = "Value";
-            cmb_significantValue.DisplayMember = "Text";
-            cmb_significantValue.DataSource = comboGradosSignificanciaSource;
-
         }
 
         private void ClearDGV(DataGridView grid)

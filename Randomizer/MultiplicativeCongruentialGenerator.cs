@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Randomizer.Classes;
+using System.Collections.Generic;
 
 namespace Randomizer
 {
@@ -25,7 +26,7 @@ namespace Randomizer
         }
 
 
-        public IEnumerable<double> Generate(int seed, int? multiplier, int? aditive, int? modulus)
+        public IEnumerable<RandomGridValue> Generate(int seed, int? multiplier, int? aditive, int? modulus)
         {
             // Almaceno el último valor en esta variable para poder operar en el siguiente ciclo.
             // Se inicializa con el valor del seed, porque es el valor para X0
@@ -36,7 +37,7 @@ namespace Randomizer
             {
                 // Generamos un número de la serie, multiplicando la constante multiplicativa y Xi-1, 
                 // y calculamos el módulo de la división por el módulo.
-                double randomNumber = (multiplier.Value * (lastValue == 0 ? seed : lastValue)) % modulus.Value;
+                double randomNumber = ((double)multiplier.Value * (lastValue == 0 ? seed : lastValue)) % modulus.Value;
 
                 // Guardamos el valor generado
                 lastValue = randomNumber;
@@ -44,11 +45,27 @@ namespace Randomizer
                 // Agregamos a la colección el valor generado, dividido por el módulo -1 para que sea un valor entre 0 y 1
                 //result.Add(randomNumber / (modulus.Value - 1));
 
+                yield return new RandomGridValue((randomNumber / (modulus.Value - 1)).ToString("0.0000"));
+            };
+        }
+
+        public IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus)
+        {
+            // Almaceno el último valor en esta variable para poder operar en el siguiente ciclo.
+            // Se inicializa con el valor del seed, porque es el valor para X0
+            double lastValue = seed;
+
+            for (int i = 0; i < numberOfValues; i++)
+            {
+                // Generamos un número de la serie, multiplicando la constante multiplicativa y Xi-1, 
+                // y calculamos el módulo de la división por el módulo.
+                double randomNumber = ((double)multiplier.Value * (lastValue == 0 ? seed : lastValue)) % modulus.Value;
+
+                // Guardamos el valor generado
+                lastValue = randomNumber;
+
                 yield return randomNumber / (modulus.Value - 1);
             };
-
-            // Se devuelve la colección completa
-            //return result;
         }
     }
 }

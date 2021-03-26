@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Randomizer.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -26,22 +27,26 @@ namespace Randomizer
             this.numberOfValues = numberOfValues;
         }
 
-        public IEnumerable<double> Generate(int seed, int? multiplier, int? aditive, int? modulus)
+        public IEnumerable<RandomGridValue> Generate(int seed, int? multiplier, int? aditive, int? modulus)
         {
             // Creamos el generador a partir del Seed
             var generator = new Random(seed);
-            //var result = new List<double>();
 
             for (int i = 0; i < numberOfValues; i++)
             {
-                // Agregamos el valor generado a la colección.
-                //result.Add(generator.NextDouble());
+                yield return new RandomGridValue(generator.NextDouble().ToString("0.0000"));
+            }
+        }
 
+        public IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus)
+        {
+            // Creamos el generador a partir del Seed
+            var generator = new Random(seed);
+
+            for (int i = 0; i < numberOfValues; i++)
+            {
                 yield return generator.NextDouble();
             }
-
-            // Se devuelve la colección completa
-            //return result;
         }
     }
 }

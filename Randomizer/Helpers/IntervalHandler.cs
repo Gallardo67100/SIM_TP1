@@ -19,7 +19,8 @@ namespace Randomizer.Helpers
                 if (i == superiorLimits.Count - 1)
                 {
                     groupedValues = sample.Where(x => x >= inferiorLimit && x <= superiorLimit);
-                } else
+                } 
+                else
                 {
                     groupedValues = sample.Where(x => x >= inferiorLimit && x < superiorLimit);
                 }

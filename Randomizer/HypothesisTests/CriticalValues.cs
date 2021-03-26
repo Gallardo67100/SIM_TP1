@@ -30,6 +30,10 @@ namespace Randomizer.HypothesisTests
             return result;
         }
 
+        /// <summary>
+        /// Obtiene los grados de significancia del archivo de excel
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<double> GetSignificantValues()
         {
             var significantValue = new List<double>();

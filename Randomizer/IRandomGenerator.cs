@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Randomizer.Classes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,6 +16,9 @@ namespace Randomizer
         /// <param name="aditive">Constante aditiva para el método linear congruencial</param>
         /// <param name="modulus">Módulo para los métodos linear congruencial, y multiplicativo congruencial</param>
         /// <returns></returns>
-        IEnumerable<double> Generate(int seed, int? multiplier, int? aditive, int? modulus);
+        IEnumerable<RandomGridValue> Generate(int seed, int? multiplier, int? aditive, int? modulus);
+
+        IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus);
+
     }
 }

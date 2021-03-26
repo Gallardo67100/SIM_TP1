@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement8 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
-            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect8 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
-            Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance histogramChartAppearance8 = new Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance();
+            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement3 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
+            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect3 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
+            Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance histogramChartAppearance3 = new Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance();
             this.btn_generarNumeros = new System.Windows.Forms.Button();
             this.grp_parametros = new System.Windows.Forms.GroupBox();
             this.cmb_significantValue = new System.Windows.Forms.ComboBox();
@@ -64,7 +64,6 @@
             this.lbl_success = new System.Windows.Forms.Label();
             this.lbl_fail = new System.Windows.Forms.Label();
             this.grp_data = new System.Windows.Forms.GroupBox();
-            this.RandomValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grp_parametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).BeginInit();
@@ -373,14 +372,12 @@
             this.FullSampleGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.FullSampleGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FullSampleGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RandomValue});
             this.FullSampleGrid.Location = new System.Drawing.Point(6, 61);
             this.FullSampleGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.FullSampleGrid.Name = "FullSampleGrid";
             this.FullSampleGrid.ReadOnly = true;
             this.FullSampleGrid.RowHeadersWidth = 51;
-            this.FullSampleGrid.Size = new System.Drawing.Size(209, 354);
+            this.FullSampleGrid.Size = new System.Drawing.Size(227, 354);
             this.FullSampleGrid.TabIndex = 0;
             this.FullSampleGrid.Text = "dataGridView1";
             // 
@@ -395,9 +392,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraChart1.Axis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            paintElement8.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
-            paintElement8.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            this.ultraChart1.Axis.PE = paintElement8;
+            paintElement3.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
+            paintElement3.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
+            this.ultraChart1.Axis.PE = paintElement3;
             this.ultraChart1.Axis.X.Labels.Font = new System.Drawing.Font("Verdana", 7F);
             this.ultraChart1.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray;
             this.ultraChart1.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near;
@@ -570,12 +567,12 @@
             this.ultraChart1.Data.MaxValue = 1D;
             this.ultraChart1.Data.MinValue = 0D;
             this.ultraChart1.Data.RowLabelsColumn = 0;
-            this.ultraChart1.Effects.Effects.Add(gradientEffect8);
-            histogramChartAppearance8.ColumnAppearance.ColumnSpacing = 0D;
-            histogramChartAppearance8.ColumnAppearance.StringAxis = false;
-            histogramChartAppearance8.LineAppearance.PE.Fill = System.Drawing.Color.Red;
-            histogramChartAppearance8.LineAppearance.Visible = false;
-            this.ultraChart1.HistogramChart = histogramChartAppearance8;
+            this.ultraChart1.Effects.Effects.Add(gradientEffect3);
+            histogramChartAppearance3.ColumnAppearance.ColumnSpacing = 0D;
+            histogramChartAppearance3.ColumnAppearance.StringAxis = false;
+            histogramChartAppearance3.LineAppearance.PE.Fill = System.Drawing.Color.Red;
+            histogramChartAppearance3.LineAppearance.Visible = false;
+            this.ultraChart1.HistogramChart = histogramChartAppearance3;
             this.ultraChart1.Location = new System.Drawing.Point(757, 61);
             this.ultraChart1.Name = "ultraChart1";
             this.ultraChart1.Size = new System.Drawing.Size(526, 354);
@@ -651,13 +648,6 @@
             this.grp_data.TabIndex = 10;
             this.grp_data.TabStop = false;
             // 
-            // RandomValue
-            // 
-            this.RandomValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.RandomValue.HeaderText = "Valor Generado";
-            this.RandomValue.MinimumWidth = 6;
-            this.RandomValue.Name = "RandomValue";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -719,7 +709,6 @@
         private System.Windows.Forms.Label lbl_success;
         private System.Windows.Forms.Label lbl_fail;
         private System.Windows.Forms.GroupBox grp_data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RandomValue;
     }
 }
 
