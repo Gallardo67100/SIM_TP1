@@ -27,3 +27,6 @@ C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Conf
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Security.AccessControl.xml
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Security.Permissions.xml
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM_Front.Controls.HistogramControl.resources
+C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\HistogramControl.dll
+C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\HistogramControl.pdb

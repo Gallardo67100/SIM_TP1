@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Infragistics.UltraChart.Resources.Appearance.PaintElement paintElement3 = new Infragistics.UltraChart.Resources.Appearance.PaintElement();
-            Infragistics.UltraChart.Resources.Appearance.GradientEffect gradientEffect3 = new Infragistics.UltraChart.Resources.Appearance.GradientEffect();
-            Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance histogramChartAppearance3 = new Infragistics.UltraChart.Resources.Appearance.HistogramChartAppearance();
             this.btn_generarNumeros = new System.Windows.Forms.Button();
             this.grp_parametros = new System.Windows.Forms.GroupBox();
             this.cmb_significantValue = new System.Windows.Forms.ComboBox();
@@ -58,17 +55,16 @@
             this.Result = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AccumResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullSampleGrid = new System.Windows.Forms.DataGridView();
-            this.ultraChart1 = new Infragistics.Win.UltraWinChart.UltraChart();
             this.lbl_histogram = new System.Windows.Forms.Label();
             this.btn_validate = new System.Windows.Forms.Button();
             this.lbl_success = new System.Windows.Forms.Label();
             this.lbl_fail = new System.Windows.Forms.Label();
             this.grp_data = new System.Windows.Forms.GroupBox();
+            this.histogramControl1 = new HistogramControl.HistogramControl();
             this.grp_parametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FullSampleGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraChart1)).BeginInit();
             this.grp_data.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -381,206 +377,6 @@
             this.FullSampleGrid.TabIndex = 0;
             this.FullSampleGrid.Text = "dataGridView1";
             // 
-//			'UltraChart' properties's serialization: Since 'ChartType' changes the way axes look,
-//			'ChartType' must be persisted ahead of any Axes change made in design time.
-//		
-            this.ultraChart1.ChartType = Infragistics.UltraChart.Shared.Styles.ChartType.HistogramChart;
-            // 
-            // ultraChart1
-            // 
-            this.ultraChart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ultraChart1.Axis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            paintElement3.ElementType = Infragistics.UltraChart.Shared.Styles.PaintElementType.None;
-            paintElement3.Fill = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(220)))));
-            this.ultraChart1.Axis.PE = paintElement3;
-            this.ultraChart1.Axis.X.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.X.Labels.ItemFormatString = "<DATA_VALUE:00.##>";
-            this.ultraChart1.Axis.X.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.X.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.FormatString = "";
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.VerticalLeftFacing;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.X.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.X.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.X.Labels.Visible = true;
-            this.ultraChart1.Axis.X.LineThickness = 1;
-            this.ultraChart1.Axis.X.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.X.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.X.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.X.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.X.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.X.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.X.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.X.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.X.RangeMax = 1D;
-            this.ultraChart1.Axis.X.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.DataInterval;
-            this.ultraChart1.Axis.X.Visible = true;
-            this.ultraChart1.Axis.X2.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.X2.Labels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.X2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.X2.Labels.ItemFormatString = "<DATA_VALUE:00.##>";
-            this.ultraChart1.Axis.X2.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.X2.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.VerticalLeftFacing;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.FormatString = "";
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.VerticalLeftFacing;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.X2.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.X2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.X2.Labels.Visible = false;
-            this.ultraChart1.Axis.X2.LineThickness = 1;
-            this.ultraChart1.Axis.X2.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.X2.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.X2.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.X2.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.X2.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.X2.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.X2.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.X2.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.X2.TickmarkInterval = 1D;
-            this.ultraChart1.Axis.X2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
-            this.ultraChart1.Axis.X2.Visible = false;
-            this.ultraChart1.Axis.Y.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Y.Labels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.Y.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.Y.Labels.ItemFormatString = "<DATA_VALUE:00.##>";
-            this.ultraChart1.Axis.Y.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Y.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.FormatString = "";
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Y.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.Y.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Y.Labels.Visible = true;
-            this.ultraChart1.Axis.Y.LineThickness = 1;
-            this.ultraChart1.Axis.Y.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Y.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.Y.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Y.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.Y.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Y.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.Y.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Y.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.Y.TickmarkInterval = 0.5D;
-            this.ultraChart1.Axis.Y.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
-            this.ultraChart1.Axis.Y.Visible = true;
-            this.ultraChart1.Axis.Y2.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Y2.Labels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.Y2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.Y2.Labels.ItemFormatString = "<DATA_VALUE:00.##>";
-            this.ultraChart1.Axis.Y2.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Y2.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.FormatString = "";
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Y2.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.Y2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Y2.Labels.Visible = true;
-            this.ultraChart1.Axis.Y2.LineThickness = 1;
-            this.ultraChart1.Axis.Y2.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Y2.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.Y2.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Y2.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.Y2.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Y2.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.Y2.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Y2.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.Y2.TickmarkInterval = 0.02D;
-            this.ultraChart1.Axis.Y2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
-            this.ultraChart1.Axis.Y2.Visible = true;
-            this.ultraChart1.Axis.Z.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Z.Labels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.Z.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.Z.Labels.ItemFormatString = "";
-            this.ultraChart1.Axis.Z.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Z.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Far;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Z.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.Z.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Z.Labels.Visible = true;
-            this.ultraChart1.Axis.Z.LineThickness = 1;
-            this.ultraChart1.Axis.Z.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Z.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.Z.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Z.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.Z.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Z.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.Z.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Z.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.Z.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
-            this.ultraChart1.Axis.Z.Visible = false;
-            this.ultraChart1.Axis.Z2.Labels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Z2.Labels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.Z2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.Z2.Labels.ItemFormatString = "";
-            this.ultraChart1.Axis.Z2.Labels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Z2.Labels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.Font = new System.Drawing.Font("Verdana", 7F);
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.Shared.Styles.AxisLabelLayoutBehaviors.Auto;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.Shared.Styles.TextOrientation.Horizontal;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Z2.Labels.SeriesLabels.Visible = true;
-            this.ultraChart1.Axis.Z2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center;
-            this.ultraChart1.Axis.Z2.Labels.Visible = false;
-            this.ultraChart1.Axis.Z2.LineThickness = 1;
-            this.ultraChart1.Axis.Z2.MajorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Z2.MajorGridLines.Color = System.Drawing.Color.Gainsboro;
-            this.ultraChart1.Axis.Z2.MajorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Z2.MajorGridLines.Visible = true;
-            this.ultraChart1.Axis.Z2.MinorGridLines.AlphaLevel = ((byte)(255));
-            this.ultraChart1.Axis.Z2.MinorGridLines.Color = System.Drawing.Color.LightGray;
-            this.ultraChart1.Axis.Z2.MinorGridLines.DrawStyle = Infragistics.UltraChart.Shared.Styles.LineDrawStyle.Dot;
-            this.ultraChart1.Axis.Z2.MinorGridLines.Visible = false;
-            this.ultraChart1.Axis.Z2.TickmarkStyle = Infragistics.UltraChart.Shared.Styles.AxisTickStyle.Smart;
-            this.ultraChart1.Axis.Z2.Visible = false;
-            this.ultraChart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ultraChart1.ColorModel.AlphaLevel = ((byte)(150));
-            this.ultraChart1.ColorModel.ColorBegin = System.Drawing.Color.Pink;
-            this.ultraChart1.ColorModel.ColorEnd = System.Drawing.Color.DarkRed;
-            this.ultraChart1.ColorModel.ModelStyle = Infragistics.UltraChart.Shared.Styles.ColorModels.CustomLinear;
-            this.ultraChart1.Data.MaxValue = 1D;
-            this.ultraChart1.Data.MinValue = 0D;
-            this.ultraChart1.Data.RowLabelsColumn = 0;
-            this.ultraChart1.Effects.Effects.Add(gradientEffect3);
-            histogramChartAppearance3.ColumnAppearance.ColumnSpacing = 0D;
-            histogramChartAppearance3.ColumnAppearance.StringAxis = false;
-            histogramChartAppearance3.LineAppearance.PE.Fill = System.Drawing.Color.Red;
-            histogramChartAppearance3.LineAppearance.Visible = false;
-            this.ultraChart1.HistogramChart = histogramChartAppearance3;
-            this.ultraChart1.Location = new System.Drawing.Point(757, 61);
-            this.ultraChart1.Name = "ultraChart1";
-            this.ultraChart1.Size = new System.Drawing.Size(526, 354);
-            this.ultraChart1.TabIndex = 5;
-            this.ultraChart1.Tooltips.HighlightFillColor = System.Drawing.Color.DimGray;
-            this.ultraChart1.Tooltips.HighlightOutlineColor = System.Drawing.Color.DarkGray;
-            this.ultraChart1.Visible = false;
-            // 
             // lbl_histogram
             // 
             this.lbl_histogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -637,10 +433,10 @@
             this.grp_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grp_data.Controls.Add(this.histogramControl1);
             this.grp_data.Controls.Add(this.lbl_sample);
             this.grp_data.Controls.Add(this.lbl_histogram);
             this.grp_data.Controls.Add(this.FullSampleGrid);
-            this.grp_data.Controls.Add(this.ultraChart1);
             this.grp_data.Controls.Add(this.IntervalsGrid);
             this.grp_data.Location = new System.Drawing.Point(23, 222);
             this.grp_data.Name = "grp_data";
@@ -648,26 +444,41 @@
             this.grp_data.TabIndex = 10;
             this.grp_data.TabStop = false;
             // 
+            // histogramControl1
+            // 
+            this.histogramControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.histogramControl1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.histogramControl1.DataSource = null;
+            this.histogramControl1.Location = new System.Drawing.Point(763, 61);
+            this.histogramControl1.Name = "histogramControl1";
+            this.histogramControl1.Size = new System.Drawing.Size(526, 354);
+            this.histogramControl1.TabIndex = 7;
+            this.histogramControl1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1337, 751);
             this.Controls.Add(this.lbl_success);
             this.Controls.Add(this.btn_validate);
             this.Controls.Add(this.grp_parametros);
             this.Controls.Add(this.grp_data);
             this.Controls.Add(this.lbl_fail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Muestra generada";
+            this.Text = "Generador";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grp_parametros.ResumeLayout(false);
             this.grp_parametros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FullSampleGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraChart1)).EndInit();
             this.grp_data.ResumeLayout(false);
             this.grp_data.PerformLayout();
             this.ResumeLayout(false);
@@ -696,7 +507,6 @@
         private System.Windows.Forms.Label lbl_seedValue;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView IntervalsGrid;
-        private Infragistics.Win.UltraWinChart.UltraChart ultraChart1;
         private System.Windows.Forms.Label lbl_histogram;
         private System.Windows.Forms.DataGridViewTextBoxColumn Interval;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpectedFrecuency;
@@ -709,6 +519,7 @@
         private System.Windows.Forms.Label lbl_success;
         private System.Windows.Forms.Label lbl_fail;
         private System.Windows.Forms.GroupBox grp_data;
+        private HistogramControl.HistogramControl histogramControl1;
     }
 }
 

@@ -70,6 +70,9 @@ namespace SIM_Front
                 if (!Int32.TryParse(txt_sampleSize.Text, out sampleSize) && String.IsNullOrEmpty(txt_sampleSize.Text))
                     throw new ArgumentException("Ingrese un tamaño de muestra válida.");
 
+                if(sampleSize > 1000000)
+                    throw new ArgumentException("El tamaño de la muestra no puede ser mayor a 1.000.000");
+
                 if (!Int32.TryParse(txt_seedValue.Text, out seed) && String.IsNullOrEmpty(txt_seedValue.Text))
                     throw new ArgumentException("Ingrese un valor semilla válido.");
 
@@ -154,10 +157,12 @@ namespace SIM_Front
         private void ShowHistogram(int numberOfIntervals)
         {
             //Mostramos el histograma y todo lo relacionado
-            this.ultraChart1.Axis.X.TickmarkInterval = (double)1/numberOfIntervals;
-            this.ultraChart1.Data.DataSource = this.fullUnformatedSample;
-            this.ultraChart1.Data.DataBind();
-            this.ultraChart1.Show();
+            var histogramData = IntervalHandler.FormatIntervalsForHistogram(this.intervals);
+
+            this.histogramControl1.DataSource = histogramData;
+            this.histogramControl1.CleanLabels();
+            this.histogramControl1.Refresh();
+            this.histogramControl1.Show();
             this.lbl_histogram.Show();
             this.btn_validate.Show();
         }
