@@ -31,6 +31,22 @@ namespace Randomizer.Helpers
             return result;
         }
 
+        public static Dictionary<double, int> FormatIntervalsForHistogram(Dictionary<string, IEnumerable<double>> dictionary)
+        {
+            var result = new Dictionary<double, int>();
+
+            foreach (var item in dictionary)
+            {
+                double limit;
+                if (double.TryParse(item.Key.Split('-')[1], out limit))
+                {
+                    result.Add(limit, item.Value.Count());
+                }
+            }
+
+            return result;
+        }
+
         public static IEnumerable<double> GetLimits(int numberOfIntervals)
         {
             var limits = DefineSuperiorLimits(numberOfIntervals).ToList();
