@@ -126,8 +126,6 @@ namespace SIM_Front
             this.fullGridSample = generator.Generate(seed, multiplicative, aditive, modulus).ToList();
             this.fullUnformatedSample = generator.GenerateUnformated(seed, multiplicative, aditive, modulus).ToList();
 
-            //TODO: Arreglar el metodo que limpia grillas
-            //ClearDGV(this.FullSampleGrid);
             //Cargamos la grilla de números psuedo aleatorios
             this.FullSampleGrid.DataSource = this.fullGridSample;
         }
@@ -136,9 +134,7 @@ namespace SIM_Front
             this.intervals = IntervalHandler.DefineIntervals(this.fullUnformatedSample, numberOfIntervals);
             this.accResult = 0.0;
 
-            //TODO: Arreglar el metodo que limpia grillas
-            //ClearDGV(this.IntervalsGrid);
-
+            IntervalsGrid.Rows.Clear();
             //Cargamos la grilla de intervalos, calculando los valores para cada fila y el acumulado
             foreach (var item in this.intervals)
             {
@@ -151,10 +147,10 @@ namespace SIM_Front
                 this.IntervalsGrid.Rows.Add(item.Key, expectedFrecuency, observedFrecuency, individualResult, accResult);
             }
 
-            ShowHistogram(numberOfIntervals);
+            ShowHistogram();
         }
 
-        private void ShowHistogram(int numberOfIntervals)
+        private void ShowHistogram()
         {
             //Mostramos el histograma y todo lo relacionado
             var histogramData = IntervalHandler.FormatIntervalsForHistogram(this.intervals);
@@ -165,19 +161,6 @@ namespace SIM_Front
             this.histogramControl1.Show();
             this.lbl_histogram.Show();
             this.btn_validate.Show();
-        }
-
-        private void ClearDGV(DataGridView grid)
-        {
-            //Método para limpiar las tablas
-            if(grid.Rows.Count > 0 )
-            {
-                foreach(DataGridViewRow row in grid.Rows)
-                {
-                    if (row.Cells[0].Value != null)
-                        grid.Rows.Remove(row);  
-                }
-            }
         }
 
         private void btn_validate_Click(object sender, EventArgs e)
