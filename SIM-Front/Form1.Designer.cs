@@ -61,6 +61,7 @@
             this.lbl_fail = new System.Windows.Forms.Label();
             this.grp_data = new System.Windows.Forms.GroupBox();
             this.histogramControl1 = new HistogramControl.HistogramControl();
+            this.lbl_tableValue = new System.Windows.Forms.Label();
             this.grp_parametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IntervalsGrid)).BeginInit();
@@ -379,7 +380,7 @@
             // 
             // lbl_histogram
             // 
-            this.lbl_histogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_histogram.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_histogram.AutoSize = true;
             this.lbl_histogram.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_histogram.Location = new System.Drawing.Point(977, 27);
@@ -410,9 +411,9 @@
             this.lbl_success.ForeColor = System.Drawing.Color.OliveDrab;
             this.lbl_success.Location = new System.Drawing.Point(18, 684);
             this.lbl_success.Name = "lbl_success";
-            this.lbl_success.Size = new System.Drawing.Size(182, 29);
+            this.lbl_success.Size = new System.Drawing.Size(465, 29);
             this.lbl_success.TabIndex = 8;
-            this.lbl_success.Text = "Mensaje exito";
+            this.lbl_success.Text = "No se rechaza la hipótesis planteada";
             this.lbl_success.Visible = false;
             // 
             // lbl_fail
@@ -457,12 +458,26 @@
             this.histogramControl1.TabIndex = 7;
             this.histogramControl1.Visible = false;
             // 
+            // lbl_tableValue
+            // 
+            this.lbl_tableValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_tableValue.AutoSize = true;
+            this.lbl_tableValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tableValue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_tableValue.Location = new System.Drawing.Point(575, 684);
+            this.lbl_tableValue.Name = "lbl_tableValue";
+            this.lbl_tableValue.Size = new System.Drawing.Size(199, 29);
+            this.lbl_tableValue.TabIndex = 11;
+            this.lbl_tableValue.Text = "Valor de tabla: ";
+            this.lbl_tableValue.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1337, 751);
+            this.Controls.Add(this.lbl_tableValue);
             this.Controls.Add(this.lbl_success);
             this.Controls.Add(this.btn_validate);
             this.Controls.Add(this.grp_parametros);
@@ -519,6 +534,7 @@
         private System.Windows.Forms.Label lbl_fail;
         private System.Windows.Forms.GroupBox grp_data;
         private HistogramControl.HistogramControl histogramControl1;
+        private System.Windows.Forms.Label lbl_tableValue;
     }
 }
 

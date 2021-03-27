@@ -59,6 +59,15 @@ namespace HistogramControl
             }
         }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            CleanLabels();
+
+            this.Refresh();
+        }
+
         public void CleanLabels()
         {
             Controls.Clear();

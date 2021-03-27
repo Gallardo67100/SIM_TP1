@@ -175,6 +175,9 @@ namespace SIM_Front
             if (double.TryParse(cmb_significantValue.SelectedValue.ToString(), out significanceValue) && Int32.TryParse(txt_intervals.Text, out numberOfIntervals))
             {
                 var criticalValue = CriticalValues.GetCriticalValue(numberOfIntervals - 1, significanceValue);
+                lbl_tableValue.Text = "Valor de tabla: " + criticalValue;
+                lbl_tableValue.Show();
+
                 if (accResult <= criticalValue)
                 {
                     this.lbl_success.Show();
@@ -189,6 +192,7 @@ namespace SIM_Front
             {
                 this.lbl_fail.Text = "Ocurrió un problema al validar la hipótesis";
                 this.lbl_fail.Show();
+                lbl_tableValue.Hide();
             }
 
         }
