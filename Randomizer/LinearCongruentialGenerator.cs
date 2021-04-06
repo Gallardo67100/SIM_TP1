@@ -41,7 +41,7 @@ namespace Randomizer
                 // Guardamos el valor generado
                 lastValue = randomNumber;
 
-                yield return new RandomGridValue((randomNumber / (modulus.Value - 1)).ToString("0.0000"));
+                yield return new RandomGridValue((randomNumber / (modulus.Value)).ToString("0.0000"));
             }
         }
 
@@ -60,7 +60,7 @@ namespace Randomizer
                 // Guardamos el valor generado
                 lastValue = randomNumber;
 
-                yield return randomNumber / (modulus.Value - 1);
+                yield return randomNumber / (modulus.Value);
             };
         }
     }
