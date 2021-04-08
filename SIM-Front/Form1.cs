@@ -18,8 +18,6 @@ namespace SIM_Front
     public partial class Form1 : Form
     {
         private List<RandomGridValue> fullGridSample { get; set; } = new List<RandomGridValue>();
-        private List<double> fullUnformatedSample { get; set; } = new List<double>();
-
         private Dictionary<string, IEnumerable<double>> intervals { get; set; } = new Dictionary<string, IEnumerable<double>>();
         private double accResult { get; set; } = 0.0;
 
@@ -124,21 +122,20 @@ namespace SIM_Front
 
             //TODO: Mejorar la carga de la grilla.
             this.fullGridSample = generator.Generate(seed, multiplicative, aditive, modulus).ToList();
-            this.fullUnformatedSample = generator.GenerateUnformated(seed, multiplicative, aditive, modulus).ToList();
 
             //Cargamos la grilla de números psuedo aleatorios
             this.FullSampleGrid.DataSource = this.fullGridSample;
         }
 
         private void LoadIntervalGrid(int numberOfIntervals){
-            this.intervals = IntervalHandler.DefineIntervals(this.fullUnformatedSample, numberOfIntervals);
+            this.intervals = IntervalHandler.DefineIntervals(this.fullGridSample, numberOfIntervals);
             this.accResult = 0.0;
 
             IntervalsGrid.Rows.Clear();
             //Cargamos la grilla de intervalos, calculando los valores para cada fila y el acumulado
             foreach (var item in this.intervals)
             {
-                var expectedFrecuency = this.fullUnformatedSample.Count / numberOfIntervals;
+                var expectedFrecuency = this.fullGridSample.Count / numberOfIntervals;
                 var observedFrecuency = item.Value.Count();
 
                 var individualResult = (Math.Pow((expectedFrecuency - observedFrecuency), 2) / expectedFrecuency);

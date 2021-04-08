@@ -1,4 +1,5 @@
-﻿using Randomizer.Helpers;
+﻿using Randomizer.Classes;
+using Randomizer.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Randomizer.HypothesisTests
 {
     public class ChiSquareMethod : IHypothesisTestMethod
     {
-        public bool Test(IEnumerable<double> sample, int numberOfIntervals, int empiricData, double significanceValue)
+        public bool Test(IEnumerable<RandomGridValue> sample, int numberOfIntervals, int empiricData, double significanceValue)
         {
             var intervals = IntervalHandler.DefineIntervals(sample, numberOfIntervals);
 

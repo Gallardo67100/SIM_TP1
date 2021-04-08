@@ -6,10 +6,10 @@ namespace Randomizer.Classes
 {
     public class RandomGridValue
     {
-        public RandomGridValue(string value)
+        public RandomGridValue(double value)
         {
             this.RandomValue = value;
         }
-        public string RandomValue { get; set; }
+        public double RandomValue { get; set; }
     }
 }

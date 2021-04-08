@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Randomizer.Classes;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Randomizer.Helpers
 {
     public static class IntervalHandler
     {
-        public static Dictionary<string, IEnumerable<double>> DefineIntervals(IEnumerable<double> sample, int numberOfIntervals)
+        public static Dictionary<string, IEnumerable<double>> DefineIntervals(IEnumerable<RandomGridValue> sample, int numberOfIntervals)
         {
             var result = new Dictionary<string, IEnumerable<double>>();
             var superiorLimits = DefineSuperiorLimits(numberOfIntervals).ToList();
@@ -18,11 +19,11 @@ namespace Randomizer.Helpers
 
                 if (i == superiorLimits.Count - 1)
                 {
-                    groupedValues = sample.Where(x => x >= inferiorLimit && x <= superiorLimit);
+                    groupedValues = sample.Where(x => x.RandomValue >= inferiorLimit && x.RandomValue <= superiorLimit).Select(x => x.RandomValue);
                 } 
                 else
                 {
-                    groupedValues = sample.Where(x => x >= inferiorLimit && x < superiorLimit);
+                    groupedValues = sample.Where(x => x.RandomValue >= inferiorLimit && x.RandomValue < superiorLimit).Select(x => x.RandomValue);
                 }
 
                 result.Add(inferiorLimit.ToString("0.00") + " - " + superiorLimit.ToString("0.00"),  groupedValues);
