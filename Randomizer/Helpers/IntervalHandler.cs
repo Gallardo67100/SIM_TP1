@@ -6,14 +6,14 @@ namespace Randomizer.Helpers
 {
     public static class IntervalHandler
     {
-        public static Dictionary<string, IEnumerable<double>> DefineIntervals(IEnumerable<RandomGridValue> sample, int numberOfIntervals)
+        public static Dictionary<string, IEnumerable<double>> DefineIntervals(IEnumerable<RandomGridValue> sample, int numberOfIntervals, double infLimit = 0.0, double supLimit = 1.0)
         {
             var result = new Dictionary<string, IEnumerable<double>>();
-            var superiorLimits = DefineSuperiorLimits(numberOfIntervals).ToList();
+            var superiorLimits = DefineSuperiorLimits(numberOfIntervals, infLimit, supLimit).ToList();
 
             for (int i = 0; i < superiorLimits.Count(); i++)
             {
-                double inferiorLimit = i == 0 ? 0 : superiorLimits[i - 1];
+                double inferiorLimit = i == 0 ? infLimit : superiorLimits[i - 1];
                 double superiorLimit = superiorLimits[i];
                 IEnumerable<double> groupedValues;
 
@@ -48,21 +48,21 @@ namespace Randomizer.Helpers
             return result;
         }
 
-        public static IEnumerable<double> GetLimits(int numberOfIntervals)
+        public static IEnumerable<double> GetLimits(int numberOfIntervals, int infLimit = 0, int supLimit = 1)
         {
             var limits = DefineSuperiorLimits(numberOfIntervals).ToList();
-            limits.Insert(0, 0.0);
+            limits.Insert(0, (double)infLimit);
             return limits;
         }
 
-        private static IEnumerable<double> DefineSuperiorLimits(int numberOfIntervals)
+        private static IEnumerable<double> DefineSuperiorLimits(int numberOfIntervals, double infLimit = 0.0, double supLimit = 1.0)
         {
             var superiorLimits = new List<double>();
-            double firstLimit = 1.0 / numberOfIntervals;
+            double firstLimit = (supLimit - infLimit) / numberOfIntervals;
 
             for (int i = 1; i <= numberOfIntervals; i++)
             {
-                superiorLimits.Add(firstLimit * i);
+                superiorLimits.Add(firstLimit * i + infLimit);
             }
 
             return superiorLimits;

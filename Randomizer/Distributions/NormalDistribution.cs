@@ -10,7 +10,7 @@ namespace Randomizer.Distributions
     {
         public NormalDistribution(int seed, int numberOfValues) : base(seed, numberOfValues){}
 
-        public IEnumerable<RandomGridValue> GenerateExponential(double medium, double standarDeviation)
+        public IEnumerable<RandomGridValue> GenerateNormal(double medium, double standarDeviation)
         {
             var generator = new NativeRandomGenerator(0.0, 1.0, this.numberOfValues);
             var randomSample = generator.Generate(this.seed, null, null, null).ToArray();

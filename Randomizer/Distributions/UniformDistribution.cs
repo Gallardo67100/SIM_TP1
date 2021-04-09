@@ -9,7 +9,7 @@ namespace Randomizer.Distributions
     {
         public UniformDistribution(int seed, int numberOfValues) : base(seed, numberOfValues) { }
 
-        public IEnumerable<RandomGridValue> GenerateUniformAB(int inferiorLimit, int superiorLimit)
+        public IEnumerable<RandomGridValue> GenerateUniformAB(double inferiorLimit, double superiorLimit)
         {
             var generator = new NativeRandomGenerator(0.0, 1.0, this.numberOfValues);
 

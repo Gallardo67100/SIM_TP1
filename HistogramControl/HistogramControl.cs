@@ -14,6 +14,7 @@ namespace HistogramControl
     {
         private int maxHeight = 0;
         private int maxWidth = 0;
+        public double minX { get; set; } = 0;
 
         public Dictionary<double, int> DataSource { get; set; }
 
@@ -115,7 +116,7 @@ namespace HistogramControl
 
             label.Size = new Size(labelWidth, 12);
             label.Location = new Point(X, Convert.ToInt32(Y));
-            label.Text = "0";
+            label.Text = this.minX.ToString("0.0");
             label.TextAlign = ContentAlignment.MiddleLeft;
             this.Controls.Add(label);
 

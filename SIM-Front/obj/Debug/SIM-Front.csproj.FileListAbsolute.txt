@@ -23,7 +23,6 @@ C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Secu
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Security.Permissions.xml
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM-Front.csprojAssemblyReference.cache
-C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM_Front.Controls.HistogramControl.resources
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM_Front.Form1.resources
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM_Front.Properties.Resources.resources
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\SIM-Front\obj\Debug\SIM-Front.csproj.GenerateResource.cache
