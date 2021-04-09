@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Randomizer", "Randomizer\Ra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomControls", "HistogramControl\CustomControls.csproj", "{0542C24C-80A3-422E-88AE-ACDD52DA845F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIM-TP3", "SIM-TP3\SIM-TP3.csproj", "{1C497194-95B5-4DEA-AB56-87F68B789624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0542C24C-80A3-422E-88AE-ACDD52DA845F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0542C24C-80A3-422E-88AE-ACDD52DA845F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0542C24C-80A3-422E-88AE-ACDD52DA845F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C497194-95B5-4DEA-AB56-87F68B789624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C497194-95B5-4DEA-AB56-87F68B789624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C497194-95B5-4DEA-AB56-87F68B789624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C497194-95B5-4DEA-AB56-87F68B789624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

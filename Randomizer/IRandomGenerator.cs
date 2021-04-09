@@ -17,8 +17,5 @@ namespace Randomizer
         /// <param name="modulus">Módulo para los métodos linear congruencial, y multiplicativo congruencial</param>
         /// <returns></returns>
         IEnumerable<RandomGridValue> Generate(int seed, int? multiplier, int? aditive, int? modulus);
-
-        IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus);
-
     }
 }

@@ -34,18 +34,7 @@ namespace Randomizer
 
             for (int i = 0; i < numberOfValues; i++)
             {
-                yield return new RandomGridValue(generator.NextDouble().ToString("0.0000"));
-            }
-        }
-
-        public IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus)
-        {
-            // Creamos el generador a partir del Seed
-            var generator = new Random(seed);
-
-            for (int i = 0; i < numberOfValues; i++)
-            {
-                yield return generator.NextDouble();
+                yield return new RandomGridValue(generator.NextDouble());
             }
         }
     }

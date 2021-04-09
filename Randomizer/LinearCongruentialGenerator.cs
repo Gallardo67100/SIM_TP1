@@ -41,27 +41,8 @@ namespace Randomizer
                 // Guardamos el valor generado
                 lastValue = randomNumber;
 
-                yield return new RandomGridValue((randomNumber / (modulus.Value)).ToString("0.0000"));
+                yield return new RandomGridValue((randomNumber / (modulus.Value)));
             }
-        }
-
-        public IEnumerable<double> GenerateUnformated(int seed, int? multiplier, int? aditive, int? modulus)
-        {
-            // Almaceno el último valor en esta variable para poder operar en el siguiente ciclo.
-            // Se inicializa con el valor del seed, porque es el valor para X0
-            double lastValue = seed;
-
-            for (int i = 0; i < numberOfValues; i++)
-            {
-                // Generamos un número de la serie, multiplicando la constante multiplicativa y Xi-1, 
-                // y calculamos el módulo de la división por el módulo.
-                double randomNumber = ((double)multiplier.Value * lastValue + aditive.Value) % modulus.Value;
-
-                // Guardamos el valor generado
-                lastValue = randomNumber;
-
-                yield return randomNumber / (modulus.Value);
-            };
         }
     }
 }
