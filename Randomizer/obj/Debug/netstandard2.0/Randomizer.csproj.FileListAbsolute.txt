@@ -7,3 +7,12 @@ C:\Users\Facundo Gallardo\source\repos\SIM-Front\Randomizer\obj\Debug\netstandar
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\Randomizer\obj\Debug\netstandard2.0\Randomizer.csproj.CoreCompileInputs.cache
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\Randomizer\obj\Debug\netstandard2.0\Randomizer.dll
 C:\Users\Facundo Gallardo\source\repos\SIM-Front\Randomizer\obj\Debug\netstandard2.0\Randomizer.pdb
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.deps.json
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.dll
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.pdb
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.csprojAssemblyReference.cache
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.AssemblyInfoInputs.cache
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.AssemblyInfo.cs
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.csproj.CoreCompileInputs.cache
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.dll
+C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.pdb
