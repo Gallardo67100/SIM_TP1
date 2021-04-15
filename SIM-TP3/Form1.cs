@@ -42,6 +42,17 @@ namespace SIM_TP3
             cmb_distribution.DisplayMember = "Text";
             cmb_distribution.DataSource = comboDistributionSource;
 
+            var comboDistributionSource1 = new List<ComboBoxItemClass>()
+            {
+                new ComboBoxItemClass(0, "10"),
+                new ComboBoxItemClass(1, "15"),
+                new ComboBoxItemClass(2, "20")
+            };
+
+            cmb_intervals.ValueMember = "Value";
+            cmb_intervals.DisplayMember = "Text";
+            cmb_intervals.DataSource = comboDistributionSource1;
+
             //Bloqueo los campos que no apliquen
             int selectedDistribution = Int32.Parse(cmb_distribution.SelectedValue.ToString());
             EnableParameterFields(selectedDistribution);
@@ -115,7 +126,7 @@ namespace SIM_TP3
                 if (!Int32.TryParse(txt_seedValue.Text, out seed) && String.IsNullOrEmpty(txt_seedValue.Text))
                     throw new ArgumentException("Ingrese un valor semilla válido.");
 
-                if (!Int32.TryParse(txt_intervals.Text, out numberOfIntervals) && String.IsNullOrEmpty(txt_intervals.Text))
+                if (!Int32.TryParse(cmb_intervals.Text, out numberOfIntervals) && String.IsNullOrEmpty(cmb_intervals.Text))
                     throw new ArgumentException("Ingrese una cantidad de intervalos válida.");
 
                 if (!double.TryParse(txt_infLimit.Text, out this.infLimit) && String.IsNullOrEmpty(txt_infLimit.Text) && txt_infLimit.Enabled)
@@ -209,7 +220,7 @@ namespace SIM_TP3
             this.histogramControl1.minX = infLimit;
             this.histogramControl1.Show();
             this.lbl_histogram.Show();
-            this.btn_validate.Show();
+            //this.btn_validate.Show();
         }
     }
 }
