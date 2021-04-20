@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Martin\\SIM\\SIM_TP1\\Randomizer\\Randomizer.csproj": {}
+    "D:\\Facu\\WorkSpace\\SIM_TP1\\Randomizer\\Randomizer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Martin\\SIM\\SIM_TP1\\Randomizer\\Randomizer.csproj": {
+    "D:\\Facu\\WorkSpace\\SIM_TP1\\Randomizer\\Randomizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Martin\\SIM\\SIM_TP1\\Randomizer\\Randomizer.csproj",
+        "projectUniqueName": "D:\\Facu\\WorkSpace\\SIM_TP1\\Randomizer\\Randomizer.csproj",
         "projectName": "Randomizer",
-        "projectPath": "C:\\Users\\Martin\\SIM\\SIM_TP1\\Randomizer\\Randomizer.csproj",
-        "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Martin\\SIM\\SIM_TP1\\Randomizer\\obj\\",
+        "projectPath": "D:\\Facu\\WorkSpace\\SIM_TP1\\Randomizer\\Randomizer.csproj",
+        "packagesPath": "C:\\Users\\Gallardo\\.nuget\\packages\\",
+        "outputPath": "D:\\Facu\\WorkSpace\\SIM_TP1\\Randomizer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gallardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +68,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

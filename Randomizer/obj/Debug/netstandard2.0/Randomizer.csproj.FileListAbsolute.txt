@@ -16,3 +16,12 @@ C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.Assem
 C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.csproj.CoreCompileInputs.cache
 C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.dll
 C:\Users\Martin\SIM\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.pdb
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.deps.json
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.dll
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\bin\Debug\netstandard2.0\Randomizer.pdb
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.csprojAssemblyReference.cache
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.AssemblyInfoInputs.cache
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.AssemblyInfo.cs
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.csproj.CoreCompileInputs.cache
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.dll
+D:\Facu\WorkSpace\SIM_TP1\Randomizer\obj\Debug\netstandard2.0\Randomizer.pdb

@@ -150,7 +150,7 @@ namespace SIM_TP3
                 ObtainDistribution(sampleSize, seed, this.infLimit != this.supLimit ? this.infLimit : 0.0, this.supLimit != this.infLimit ? this.supLimit : 1.0, lambda, medium, standardDev);
 
                 // Carga la grilla de intervalo y el histograma
-                LoadIntervalGrid(numberOfIntervals, this.infLimit != this.supLimit ? this.infLimit : 0.0, this.supLimit != this.infLimit ? this.supLimit : 1.0);
+                LoadIntervalGrid(numberOfIntervals, this.infLimit != this.supLimit ? this.infLimit : 0.0, this.supLimit != this.infLimit ? this.supLimit : (this.fullGridSample.Max(x => x.RandomValue)));
             }
             catch (ArgumentException ex)
             {
@@ -192,21 +192,57 @@ namespace SIM_TP3
         {
             this.intervals = IntervalHandler.DefineIntervals(this.fullGridSample, numberOfIntervals, infLimit, supLimit);
             this.accResult = 0.0;
+            var previousIntervalKey = "";
 
             IntervalsGrid.Rows.Clear();
             //Cargamos la grilla de intervalos, calculando los valores para cada fila y el acumulado
             foreach (var item in this.intervals)
             {
-                var expectedFrecuency = this.fullGridSample.Count / numberOfIntervals;
+                var expectedFrecuency = this.GetExpectedFrecuency(item.Key);
                 var observedFrecuency = item.Value.Count();
 
                 var individualResult = (Math.Pow((expectedFrecuency - observedFrecuency), 2) / expectedFrecuency);
                 accResult += individualResult;
 
-                this.IntervalsGrid.Rows.Add(item.Key, expectedFrecuency, observedFrecuency, individualResult, accResult);
+                this.IntervalsGrid.Rows.Add(item.Key, expectedFrecuency.ToString("0.00"), observedFrecuency, individualResult, accResult);
+                previousIntervalKey = item.Key;
             }
 
             ShowHistogram(infLimit);
+        }
+
+        private double GetExpectedFrecuency(string currentInterval)
+        {
+            double result = 0.0;
+            int numberOfValues = fullGridSample.Count();
+            int numberOfIntervals = intervals.Count();
+            int selectedDistribution = Int32.Parse(cmb_distribution.SelectedValue.ToString());
+            double infLimit = double.Parse(currentInterval.Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries)[0]);
+            double supLimit = double.Parse(currentInterval.Split(new string[] { " - " }, StringSplitOptions.RemoveEmptyEntries)[1]);
+
+            switch (selectedDistribution)
+            {
+                case 0:
+                    result = (double)numberOfValues / numberOfIntervals;
+                    break;
+                case 1:
+                    double lambda = double.Parse(txt_lambda.Text);
+                    double prevAccum = 1.0 - (Math.Exp(-1 * lambda * infLimit));
+                    double currAccum = 1.0 - (Math.Exp(-1 * lambda * supLimit));
+
+                    result = (currAccum - prevAccum) * numberOfValues;
+                    break;
+                default:
+                    double standardDeviation = double.Parse(txt_standarDev.Text);
+                    double medium = double.Parse(txt_medium.Text);
+                    double mediumValue = (supLimit + infLimit) / 2;
+
+                    var probability = (1 / standardDeviation * Math.Sqrt(2 * Math.PI)) * Math.Exp(-0.5 * Math.Pow((mediumValue - medium) / standardDeviation, 2));
+                    result = probability * numberOfValues;
+                    break;
+            }
+
+            return result;
         }
 
         private void ShowHistogram(double infLimit)
